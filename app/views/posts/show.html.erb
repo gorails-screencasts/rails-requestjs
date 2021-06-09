@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @post.title %>
+</p>
+
+<p>
+  <strong>Published at:</strong>
+
+  <div id="published">
+    <%= @post.published_at %>
+  </div>
+</p>
+
+<%= link_to "Publish", "#", data: { controller: "publish", publish_url_value: publish_post_path(@post), action: "click->publish#toggle" } %>
+
+<%= link_to 'Edit', edit_post_path(@post) %> |
+<%= link_to 'Back', posts_path %>
